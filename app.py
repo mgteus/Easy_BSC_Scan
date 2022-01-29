@@ -44,6 +44,9 @@ def WebApp():
                 AgGrid(df, fit_columns_on_grid_load=True, theme='streamlit')
                 st.markdown("ps: The total USD value is based on the current token value, not the token value at transaction date. ")
                 st.markdown("ps2: There is a chance of some ad-token transactions to appear in the address history. Don't worry, they are not real.")
+            else:
+                st.error("Can't resolve the information of the given address, sorry...")
+                st.warning(df)
 
     elif tab == "About":
         st.subheader('WebApp developed by [@mgteus](https://github.com/mgteus)')
