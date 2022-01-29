@@ -42,8 +42,10 @@ def WebApp():
                 st.warning(df)
             elif isinstance(df, pd.DataFrame):
                 AgGrid(df, fit_columns_on_grid_load=True, theme='streamlit')
-                st.text("ps: The total USD value is based on the current token value, not the token value at transaction date.")
-                st.text("ps2: There is a chance of some ad-token transactions to appear in the address history. Don't worry, they are not real.")
+                st.text("ps: The total USD value is based on the current token value, ")
+                st.text("not the token value at transaction date.")
+                st.text("ps2: There is a chance of some ad-token transactions to appear in the address history. ")
+                st.text("Don't worry, they are not real.")
     elif tab == "About":
         st.subheader('WebApp developed by [@mgteus](https://github.com/mgteus)')
         st.markdown('Source Code avaible at [EasyScan](https://github.com/mgteus/Easy_BSC_Scan)', unsafe_allow_html=True)
