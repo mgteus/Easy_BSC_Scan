@@ -21,7 +21,8 @@ def WebApp():
         
         st.markdown('***Beta Version 1.0.0***')
     elif tab == 'Easy Scan':
-        st.subheader('Write at the text input below' \
+        st.subheader('EasyScan App')
+        st.markdown('Write at the text input below ' \
                     + 'the wallet address which you want to' \
                     + 'check the trade history out')
 
@@ -33,10 +34,11 @@ def WebApp():
             df = show_df_of_adress_trades(address=wallet_address)
 
             if isinstance(df, str):
+                st.error("Can't resolve the information of the given address, sorry...")
                 st.warning(df)
             elif isinstance(df, pd.DataFrame):
                 AgGrid(df, fit_columns_on_grid_load=True, theme='streamlit')
-                
+
     elif tab == "About":
         st.subheader('A basic WebApp to check the transactions '\
                     +'of the given wallet address ' \
