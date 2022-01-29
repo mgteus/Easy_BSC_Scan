@@ -55,9 +55,9 @@ def WebApp():
 
 if __name__ == '__main__':
     WebApp()
-    """ 
-        Use CoinGeckoAPI to get token price at transaction date.
-        https://algotrading101.com/learn/coingecko-api-guide/
-    """
+    # """ 
+    #     Use CoinGeckoAPI to get token price at transaction date.
+    #     https://algotrading101.com/learn/coingecko-api-guide/
+    # """
         
 
