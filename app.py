@@ -17,7 +17,11 @@ def WebApp():
 
     if tab == 'Welcome Page':
         st.subheader('Welcome to Easy BSC Scan WebApp')
-        st.subheader('Select the Easy Scan tab to procede to the application')
+        st.subheader('A basic WebApp to check the transactions '\
+                    +'of the given wallet address ' \
+                    +'based on the Binance Smart Chain.')
+
+        st.markdown('***Select the Easy Scan tab to procede to the application.***')
         
         st.markdown('***Beta Version 1.0.0***')
     elif tab == 'Easy Scan':
@@ -38,11 +42,11 @@ def WebApp():
                 st.warning(df)
             elif isinstance(df, pd.DataFrame):
                 AgGrid(df, fit_columns_on_grid_load=True, theme='streamlit')
-
+                st.text("ps: The total USD value is based on the current token value, not the token value at transaction date.")
+                st.text("ps2: There is a chance of some ad-token transactions to appear in the address history. Don't worry, they are not real.")
     elif tab == "About":
-        st.subheader('A basic WebApp to check the transactions '\
-                    +'of the given wallet address ' \
-                    +'based on the Binance Smart Chain')
+        st.subheader('WebApp developed by [@mgteus](https://github.com/mgteus)')
+        st.markdown('Source Code avaible at [EasyScan](https://github.com/mgteus/Easy_BSC_Scan)', unsafe_allow_html=True)
         
 
 if __name__ == '__main__':
