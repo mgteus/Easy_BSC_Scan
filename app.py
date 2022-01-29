@@ -16,10 +16,10 @@ def WebApp():
     tab = st.sidebar.selectbox('Menu', menu)
 
     if tab == 'Welcome Page':
-        st.subheader('Welcome to Easy BSC Scan WebApp')
-        st.subheader('A basic WebApp to check the transactions '\
+        st.header('Welcome to Easy BSC Scan WebApp')
+        st.markdown('A basic WebApp to check the transactions '\
                     +'of the given wallet address ' \
-                    +'based on the Binance Smart Chain.')
+                    +'based on the Binance Smart Chain API.')
 
         st.markdown('***Select the Easy Scan tab to procede to the application.***')
         
