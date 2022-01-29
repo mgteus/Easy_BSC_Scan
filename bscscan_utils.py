@@ -53,17 +53,20 @@ async def get_address_trades(address: str = '',
                 date = datetime.fromtimestamp(float(trade['timeStamp'])).strftime(r'%Y-%m-%d')
                 # defining side 
                 if address.upper() == trade['from'].upper():
-                    side = 'SELL'
+                    side = 'SELL-IN'
                 else:
-                    side = 'BUY'
+                    side = 'BUY-OUT'
                 # defining token
                 token = trade['tokenSymbol']
+
                 # defining quantity
-                quantity = float(trade['value'])/10**float(trade['tokenDecimal'])
+                quantity = f"{float(trade['value'])/10**float(trade['tokenDecimal']):.8f}"
+
                 # defining price 
                 token_price = get_token_price_by_address(address=trade['contractAddress'])
+
                 # defining total in USD
-                trade_price_usd = round(quantity*token_price, 2)
+                trade_price_usd = round(float(quantity)*token_price, 2)
 
 
                 my_dict['DATE'].append(date)
@@ -72,6 +75,7 @@ async def get_address_trades(address: str = '',
                 my_dict['QUANTITY'].append(quantity)
                 my_dict['TOKEN_PRICE'].append(token_price)
                 my_dict['TOTAL USD'].append(trade_price_usd)
+
             except Exception as e:
                 print(e)
                 print(trade)

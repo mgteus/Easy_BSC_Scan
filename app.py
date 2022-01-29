@@ -42,22 +42,22 @@ def WebApp():
                 st.warning(df)
             elif isinstance(df, pd.DataFrame):
                 AgGrid(df, fit_columns_on_grid_load=True, theme='streamlit')
-                st.caption("ps: The total USD value is based on the current token value, ")
-                st.caption("not the token value at transaction date.")
-                st.caption("ps2: There is a chance of some ad-token transactions to appear in the address history. ")
-                st.caption("Don't worry, they are not real.")
+                st.markdown("ps: The total USD value is based on the current token value, not the token value at transaction date. ")
+                st.markdown("ps2: There is a chance of some ad-token transactions to appear in the address history. Don't worry, they are not real.")
+
     elif tab == "About":
         st.subheader('WebApp developed by [@mgteus](https://github.com/mgteus)')
         st.markdown('Source Code avaible at [EasyScan](https://github.com/mgteus/Easy_BSC_Scan)', unsafe_allow_html=True)
 
         st.text('Table with accurate prices coming soon')
-        """ 
-        Use CoinGeckoAPI to get token price at transaction date.
-        https://algotrading101.com/learn/coingecko-api-guide/
-        """
+
         
 
 if __name__ == '__main__':
     WebApp()
+    """ 
+        Use CoinGeckoAPI to get token price at transaction date.
+        https://algotrading101.com/learn/coingecko-api-guide/
+    """
         
 
