@@ -8,7 +8,7 @@ def WebApp():
     Streamlit WebApp Function
     """
 
-    st.set_page_config(page_title='AutoTrading Binance BOT', page_icon="📊")
+    st.set_page_config(page_title='BSC Scan', page_icon="📊")
 
     menu = ['Welcome Page', 'Easy Scan', 'About']
 
@@ -24,7 +24,8 @@ def WebApp():
                     + 'the wallet address which you want to' \
                     + 'check the trade history out')
 
-        wallet_address = st.text_area('0x0000000000000000000000000')
+        wallet_address = st.text_area('Text Input',
+                            placeholder='0x0000000000000000000000000')
 
 
         if st.checkbox('Check Transactions'):
@@ -32,7 +33,7 @@ def WebApp():
 
             if isinstance(df, str):
                 st.warning(df)
-            elif isinstance(df, pd.DataFrame()):
+            elif isinstance(df, pd.DataFrame):
                 st.dataframe(df)
     elif tab == "About":
         st.subheader('A basic WebApp to check the transactions '\
