@@ -1,6 +1,10 @@
 import asyncio
 from datetime import datetime
 import pandas as pd
+import platform
+import bscscan
+from bscscan import BscScan
+
 
 from pancake_api import get_token_price_by_address
 
@@ -87,7 +91,9 @@ def show_df_of_adress_trades(address: list or str = [],
         address = [address]
 
     for wallet in address: # wallets address loop
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        if platform.system()=='Windows':
+            asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        
         try:
 
             wallet_addres_1 = asyncio.run(get_address_trades(address=wallet))
@@ -114,4 +120,4 @@ if __name__ == '__main__':
 
     #show_df_of_adress_trades(address=wallet_address)
 
-    print(datetime.__version__)
+    print(bscscan.__version__)
