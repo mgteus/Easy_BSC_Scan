@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from st_aggrid import AgGrid
 from bscscan_utils import show_df_of_adress_trades
 
 
@@ -34,7 +35,8 @@ def WebApp():
             if isinstance(df, str):
                 st.warning(df)
             elif isinstance(df, pd.DataFrame):
-                st.dataframe(df)
+                AgGrid(df, fit_columns_on_grid_load=True, theme='streamlit')
+                
     elif tab == "About":
         st.subheader('A basic WebApp to check the transactions '\
                     +'of the given wallet address ' \
