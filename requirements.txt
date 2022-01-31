@@ -1,7 +1,8 @@
 requests==2.24.0
 streamlit==1.4.0
 Pillow==8.0.1
-matplotlib==3.5.0 
+matplotlib==3.5.0
+pycoingecko==2.2.0
 streamlit-aggrid==0.2.2.post4
 git+https://github.com/pcko1/bscscan-python.git@stable
 bscscan-python
