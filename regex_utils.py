@@ -1,4 +1,4 @@
-import regex as re
+import re
 
 def create_coingecko_list(): 
     x = ''
@@ -35,6 +35,7 @@ def get_coingecko_dict():
     
 
 if __name__ == '__main__':
+    #print(re.__version__)
     #print(re.__version__)
     print(get_coingecko_dict())
 
